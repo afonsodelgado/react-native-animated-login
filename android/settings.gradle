@@ -1,0 +1,3 @@
+rootProject.name = 'cobe2Test'
+
+include ':app'
