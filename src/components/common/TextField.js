@@ -7,7 +7,7 @@ const TextField = Styled.TextInput`
     color: #444;
     background-color: #ddd;
     border-radius: 8px;
-    margin-bottom: ${props => props.lastOfType ? '0' : '16px'};
+    margin-bottom: ${props => props.marginBottom ? props.marginBottom : '0'};
     padding-horizontal: 8px;
 `;
 

@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import Styled from 'styled-components';
-import { View, Text, ActivityIndicator, Dimensions, Animated, LayoutAnimation } from 'react-native';
+import { Keyboard, ActivityIndicator, Dimensions, Animated, LayoutAnimation } from 'react-native';
 import theme from './../../../theme';
 
 const windowWidth = Dimensions.get('window').width;
@@ -51,6 +51,8 @@ class Button extends Component<Props, State> {
     };
 
     handleLogin = () => {
+        Keyboard.dismiss();
+
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
         this.setState({ isLoggingIn: true, animatedButtonWidth: 60, animatedButtonRadius: 30 });
