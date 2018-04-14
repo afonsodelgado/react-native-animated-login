@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 
-const FullScreenContainer = Styled.View`
+const FullScreenContainer = Styled.KeyboardAvoidingView`
     display: flex;
     height: 100%;
     width: 100%;
