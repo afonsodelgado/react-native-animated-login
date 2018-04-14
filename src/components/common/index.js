@@ -1,4 +1,4 @@
-import TextField from './TextField';
+import IconTextField from './IconTextField';
 import FullScreenContainer from './FullScreenContainer';
 
-export { TextField, FullScreenContainer };
+export { IconTextField, FullScreenContainer };
