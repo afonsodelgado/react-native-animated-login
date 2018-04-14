@@ -1,34 +1,44 @@
 // @flow
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
-import Styled from 'styled-components';
 import { FullScreenContainer, TextField } from './../common';
-import { Button, Logo } from './components';
+import { Button, Logo, TextFieldWrapper } from './components';
+
 
 type Props = {}
-class Login extends Component<Props> {
+type State = {
+    imageHeight: number,
+    imageWidth: number
+}
+
+class Login extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
     }
 
     render() {
         return (
-            <FullScreenContainer justifyContent='space-around'>
-                <Logo />
+            <FullScreenContainer justifyContent='space-around' behavior={'padding'}>
+                <Logo height={150} width={150} />
 
-                <TextField
-                    placeholder='Login'
-                    autoCorrect={false}
-                    autoCaptalize={false}
-                />
-                <TextField
-                    placeholder='Password'
-                    autoCorrect={false}
-                    autoCaptalize={false}
-                    secureTextEntry
-                />
+                <TextFieldWrapper>
+                    <TextField
+                        placeholder='Login'
+                        autoCorrect={false}
+                        autoCaptalize={false}
+                        marginBottom='16px'
+                    />
 
-                <Button/>
+                    <TextField
+                        placeholder='Password'
+                        autoCorrect={false}
+                        autoCaptalize={false}
+                        secureTextEntry
+                        marginBottom='48px'
+                    />
+
+                    <Button/>
+                </TextFieldWrapper>
+
             </FullScreenContainer>
         );
     }
