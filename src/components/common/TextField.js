@@ -1,16 +1,14 @@
-// @flow
-import React, { type Node } from 'react';
-import { View, TextInput } from 'react-native';
 import Styled from 'styled-components';
 
-type Props = {
-    children? : Node,
-    rest: any
-}
-const CustomTextField = ({ children, ...rest }: Props) => {
-    return (
-        <TextInput {... rest}>{children}</TextInput>
-    );
-};
+const TextField = Styled.TextInput`
+    width: ${props => props.width ? props.width : '90%'};
+    height:  ${props => props.height ? props.height : '40px'};
+    font-size: 18px;
+    color: #444;
+    background-color: #ddd;
+    border-radius: 8px;
+    margin-bottom: ${props => props.lastOfType ? '0' : '16px'};
+    padding-horizontal: 8px;
+`;
 
-export default CustomTextField;
+export default TextField;

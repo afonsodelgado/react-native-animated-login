@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import Styled from 'styled-components';
-import CustomTextField from './../common/CustomTextField';
+import { FullScreenContainer, TextField } from './../common';
+import { Button, Logo } from './components';
 
 type Props = {}
 class Login extends Component<Props> {
@@ -12,9 +13,23 @@ class Login extends Component<Props> {
 
     render() {
         return (
-            <View>
-                <Text>Hello</Text>
-            </View>
+            <FullScreenContainer justifyContent='space-around'>
+                <Logo />
+
+                <TextField
+                    placeholder='Login'
+                    autoCorrect={false}
+                    autoCaptalize={false}
+                />
+                <TextField
+                    placeholder='Password'
+                    autoCorrect={false}
+                    autoCaptalize={false}
+                    secureTextEntry
+                />
+
+                <Button/>
+            </FullScreenContainer>
         );
     }
 }
