@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import './ReactotronConfig'
+import './ReactotronConfig';
 import App from './App';
 
-AppRegistry.registerComponent('cobe2Test', () => App);
+AppRegistry.registerComponent('AnimatedScreens', () => App);

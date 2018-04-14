@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "cobe2Test-tvOS.app"
-               BlueprintName = "cobe2Test-tvOS"
-               ReferencedContainer = "container:cobe2Test.xcodeproj">
+               BuildableName = "AnimatedScreens-tvOS.app"
+               BlueprintName = "AnimatedScreens-tvOS"
+               ReferencedContainer = "container:AnimatedScreens.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "cobe2Test-tvOSTests.xctest"
-               BlueprintName = "cobe2Test-tvOSTests"
-               ReferencedContainer = "container:cobe2Test.xcodeproj">
+               BuildableName = "AnimatedScreens-tvOSTests.xctest"
+               BlueprintName = "AnimatedScreens-tvOSTests"
+               ReferencedContainer = "container:AnimatedScreens.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "cobe2Test-tvOSTests.xctest"
-               BlueprintName = "cobe2Test-tvOSTests"
-               ReferencedContainer = "container:cobe2Test.xcodeproj">
+               BuildableName = "AnimatedScreens-tvOSTests.xctest"
+               BlueprintName = "AnimatedScreens-tvOSTests"
+               ReferencedContainer = "container:AnimatedScreens.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "cobe2Test-tvOS.app"
-            BlueprintName = "cobe2Test-tvOS"
-            ReferencedContainer = "container:cobe2Test.xcodeproj">
+            BuildableName = "AnimatedScreens-tvOS.app"
+            BlueprintName = "AnimatedScreens-tvOS"
+            ReferencedContainer = "container:AnimatedScreens.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "cobe2Test-tvOS.app"
-            BlueprintName = "cobe2Test-tvOS"
-            ReferencedContainer = "container:cobe2Test.xcodeproj">
+            BuildableName = "AnimatedScreens-tvOS.app"
+            BlueprintName = "AnimatedScreens-tvOS"
+            ReferencedContainer = "container:AnimatedScreens.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "cobe2Test-tvOS.app"
-            BlueprintName = "cobe2Test-tvOS"
-            ReferencedContainer = "container:cobe2Test.xcodeproj">
+            BuildableName = "AnimatedScreens-tvOS.app"
+            BlueprintName = "AnimatedScreens-tvOS"
+            ReferencedContainer = "container:AnimatedScreens.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

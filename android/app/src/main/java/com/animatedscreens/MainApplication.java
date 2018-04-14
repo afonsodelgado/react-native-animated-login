@@ -1,4 +1,4 @@
-package com.cobe2test;
+package com.animatedscreens;
 
 import android.app.Application;
 
