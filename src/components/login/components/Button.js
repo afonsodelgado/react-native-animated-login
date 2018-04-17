@@ -21,17 +21,16 @@ const Label = Styled.Text`
     font-size: 20px;
 `;
 
+const AnimatedLabel = Animated.createAnimatedComponent(Label);
 const AnimatedButton = Animated.createAnimatedComponent(Container);
 
-type Props = {
-    animatedButtonWidth: number,
-    animatedButtonBorderRadius: number
-};
+type Props = {};
 
 type State = {
     isLoggingIn: bool,
-    animatedButtonRadius: number,
-    animatedButtonWidth: number
+    buttonRadius: number,
+    buttonWidth: number,
+    labelOpacity: number
 };
 
 class Button extends Component<Props, State> {
@@ -39,8 +38,9 @@ class Button extends Component<Props, State> {
         super(props);
         this.state = {
             isLoggingIn: false,
-            animatedButtonWidth: windowWidth * 0.9,
-            animatedButtonRadius: 4
+            buttonWidth: windowWidth * 0.9,
+            buttonRadius: 4,
+            labelOpacity: 1
         };
     }
 
@@ -55,7 +55,7 @@ class Button extends Component<Props, State> {
 
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
-        this.setState({ isLoggingIn: true, animatedButtonWidth: 60, animatedButtonRadius: 30 });
+        this.setState({ isLoggingIn: true, buttonWidth: 60, buttonRadius: 30, labelOpacity: 0 });
         setTimeout(() => {
             this.animateLoggedIn();
         }, 4000);
@@ -65,10 +65,11 @@ class Button extends Component<Props, State> {
         return (
             <AnimatedButton
                 onPress={!this.state.isLoggingIn ? this.handleLogin : null}
-                style={{ width: this.state.animatedButtonWidth, borderRadius: this.state.animatedButtonWidth }}
+                style={{ width: this.state.buttonWidth, borderRadius: this.state.buttonWidth }}
                 activeOpacity={!this.state.isLoggingIn ? 0.5 : 1}
             >
-                {!this.state.isLoggingIn ? <Label>Login</Label> : <ActivityIndicator />}
+                <AnimatedLabel style={{ opacity: this.state.labelOpacity }}>Login</AnimatedLabel>
+                <ActivityIndicator style={{ display: this.state.isLoggingIn ? 'flex' : 'none' }} />
             </AnimatedButton>
         );
     }
