@@ -4,12 +4,11 @@ import { FullScreenContainer, IconTextField } from './../common';
 import { Button, Logo, TextFieldWrapper } from './components';
 import theme from './../../theme';
 
-
-type Props = {}
+type Props = {};
 type State = {
     dataUsername: string,
     dataPassword: string
-}
+};
 
 class Login extends Component<Props, State> {
     constructor(props: Props) {
