@@ -4,6 +4,8 @@ import Styled from 'styled-components';
 import { Keyboard, ActivityIndicator, Dimensions, Animated, LayoutAnimation } from 'react-native';
 import theme from './../../../theme';
 
+let hideLabelTimeout;
+
 const windowWidth = Dimensions.get('window').width;
 
 const Container = Styled.TouchableOpacity`
@@ -24,13 +26,16 @@ const Label = Styled.Text`
 const AnimatedLabel = Animated.createAnimatedComponent(Label);
 const AnimatedButton = Animated.createAnimatedComponent(Container);
 
-type Props = {};
+type Props = {
+    onPress: Function
+};
 
 type State = {
     isLoggingIn: bool,
     buttonRadius: number,
     buttonWidth: number,
-    labelOpacity: number
+    labelOpacity: number,
+    isLabelVisible: boolean
 };
 
 class Button extends Component<Props, State> {
@@ -40,25 +45,28 @@ class Button extends Component<Props, State> {
             isLoggingIn: false,
             buttonWidth: windowWidth * 0.9,
             buttonRadius: 4,
-            labelOpacity: 1
+            labelOpacity: 1,
+            isLabelVisible: true
         };
     }
 
-    animateLoggedIn = () => {
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    componentWillUnmount() {
+        clearTimeout(hideLabelTimeout);
+    }
 
-        this.setState({ isLoggingIn: false });
+    hideLabel = () => {
+        this.setState({ isLabelVisible: false });
     };
 
     handleLogin = () => {
         Keyboard.dismiss();
-
+        
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
         this.setState({ isLoggingIn: true, buttonWidth: 60, buttonRadius: 30, labelOpacity: 0 });
-        setTimeout(() => {
-            this.animateLoggedIn();
-        }, 4000);
+        hideLabelTimeout = setTimeout(() => {
+            this.hideLabel();
+        }, 150);
     };
 
     render() {
@@ -68,8 +76,8 @@ class Button extends Component<Props, State> {
                 style={{ width: this.state.buttonWidth, borderRadius: this.state.buttonWidth }}
                 activeOpacity={!this.state.isLoggingIn ? 0.5 : 1}
             >
-                <AnimatedLabel style={{ opacity: this.state.labelOpacity }}>Login</AnimatedLabel>
-                <ActivityIndicator style={{ display: this.state.isLoggingIn ? 'flex' : 'none' }} />
+                {this.state.isLabelVisible ? <AnimatedLabel style={{ opacity: this.state.labelOpacity }}>Login</AnimatedLabel> : null}
+                <ActivityIndicator style={{ display: this.state.isLoggingIn ? 'flex' : 'none' }} color={theme.palette.backgroundColor}/>
             </AnimatedButton>
         );
     }
