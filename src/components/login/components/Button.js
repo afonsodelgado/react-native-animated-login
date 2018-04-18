@@ -56,6 +56,7 @@ class Button extends Component<Props, State> {
 
     hideLabel = () => {
         this.setState({ isLabelVisible: false });
+        this.props.onPress();
     };
 
     handleLogin = () => {
